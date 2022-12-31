@@ -11,11 +11,12 @@ private:
 
     std::string convertionType;
     std::vector <int> angleData;
-    int midspinNumber[100000];
-    int midspin[100000];
-    float bpm[100000];
-    float offset[100000];
-    int twirl[100000];
+    int midspinNumber[80000];
+    int midspin[80000];
+    float bpm[80000];
+    float offset[80000];
+    int offsetAngle[80000];
+    int twirl[80000];
     std::string mapData="";
 
     int mod(int aMod, int bMod){
@@ -117,6 +118,9 @@ public:
             }
             midspinNumber[angleData.size()-1]=midspinCounter;
         }
+        for(int i=angleData.size();i<80000;i++){
+            midspinNumber[i]=midspinNumber[angleData.size()-1];
+        }
         mapData.erase(0,mapData.find("bpm")+5);
         bpm[0]=stof(mapData.substr(0,mapData.find(",")));
         mapData.erase(0,mapData.find("offset")+8);
@@ -127,7 +131,7 @@ public:
         mapData=mapData.substr(0,mapData.find("decorations"));
         int currentFloorPos=0;
         std::string buffer="";
-        for(int i=0;i<100000;i++){
+        for(int i=0;i<80000;i++){
             twirl[i]=1;
         }
         while(mapData.find("floor")!=-1){
@@ -138,14 +142,14 @@ public:
                 buffer.erase(0,buffer.find("speedType")+12);
                 if(buffer.substr(0,buffer.find(",")-1)=="Multiplier"){
                     buffer.erase(0,buffer.find("bpmMultiplier")+15);
-                    bpm[currentFloorPos]=(-1.0)*stof(buffer.substr(0,buffer.find(",")-1));
+                    bpm[currentFloorPos-midspinNumber[currentFloorPos]]=(-1.0)*stof(buffer.substr(0,buffer.find(",")-1));
                 }else{
                     buffer.erase(0,buffer.find("beatsPerMinute")+16);
-                    bpm[currentFloorPos]=stof(buffer.substr(0,buffer.find(",")));
+                    bpm[currentFloorPos-midspinNumber[currentFloorPos]]=stof(buffer.substr(0,buffer.find(",")));
                 }
             }
             if(mapData.substr(0,mapData.find("floor")).find("Twirl")!=-1){
-                twirl[currentFloorPos]=-1;
+                twirl[currentFloorPos-midspinNumber[currentFloorPos]]=-1;
             }
         }
         float currentBPM=bpm[0];
@@ -153,15 +157,19 @@ public:
         for(int i=1;i<angleData.size();i++){
             if(midspin[i-1]==0){
                 if(currentTwirl==1){
+                    offsetAngle[i]=mod(180+angleData[i-1]-angleData[i],360);
                     offset[i]=(1000*mod(180+angleData[i-1]-angleData[i],360))/(3*currentBPM);
                 }else{
+                    offsetAngle[i]=mod(180-angleData[i-1]+angleData[i],360);
                     offset[i]=(1000*mod(180-angleData[i-1]+angleData[i],360))/(3*currentBPM);
                 }
             }
             if(midspin[i-1]==1){
                 if(currentTwirl==1){
+                    offsetAngle[i]=mod(angleData[i-1]-angleData[i],360);
                     offset[i]=(1000*mod(angleData[i-1]-angleData[i],360))/(3*currentBPM);
                 }else{
+                    offsetAngle[i]=mod(-angleData[i-1]+angleData[i],360);
                     offset[i]=(1000*mod(-angleData[i-1]+angleData[i],360))/(3*currentBPM);
                 }
             }
@@ -193,8 +201,12 @@ public:
         return offset;
     }
 
+    int * getOffsetAngle(){
+        return offsetAngle;
+    };
+
     int * getTwirl(){
         return twirl;
     }
-    
+
 };

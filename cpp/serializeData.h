@@ -13,6 +13,7 @@ private:
     int midspin[100000];
     float bpm[100000];
     float offset[100000];
+    int offsetAngle[100000];
     int twirl[100000];
     std::string mapData="";
 
@@ -27,6 +28,7 @@ public:
     int * getMidspinNumber();
     float * getBPM();
     float * getOffset();
+    int * getOffsetAngle();
     int * getTwirl();
     
 };

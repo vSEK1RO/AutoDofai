@@ -1,25 +1,25 @@
 # AutoDofai
 
-### Скачать текущую версию / Download: [__v0.1__](https://github.com/vSEK1RO/3D_Engine/releases/download/v0.1/src.rar)
+### п║п╨п╟я┤п╟я┌я▄ я┌п╣п╨я┐я┴я┐я▌ п╡п╣я─я│п╦я▌ / Download: [__v0.1__](https://github.com/vSEK1RO/3D_Engine/releases/download/v0.1/src.rar)
 
->Данный проект представляет собой бота для адофаи с возможностью имитации паттернов нажатий.
+>п■п╟п╫п╫я▀п╧ п©я─п╬п╣п╨я┌ п©я─п╣п╢я│я┌п╟п╡п╩я▐п╣я┌ я│п╬п╠п╬п╧ п╠п╬я┌п╟ п╢п╩я▐ п╟п╢п╬я└п╟п╦ я│ п╡п╬п╥п╪п╬п╤п╫п╬я│я┌я▄я▌ п╦п╪п╦я┌п╟я├п╦п╦ п©п╟я┌я┌п╣я─п╫п╬п╡ п╫п╟п╤п╟я┌п╦п╧.
 
 >This project is a bot for adofai with the ability to simulate click patterns.
 
-На данный момент реализовано / Currently implemented
+п²п╟ п╢п╟п╫п╫я▀п╧ п╪п╬п╪п╣п╫я┌ я─п╣п╟п╩п╦п╥п╬п╡п╟п╫п╬ / Currently implemented
 
-:white_check_mark: класс для сериализации данных уровня / class for serializing map data
+:white_check_mark: п╨п╩п╟я│я│ п╢п╩я▐ я│п╣я─п╦п╟п╩п╦п╥п╟я├п╦п╦ п╢п╟п╫п╫я▀я┘ я┐я─п╬п╡п╫я▐ / class for serializing map data
 
-:white_check_mark: метод для расчета оффсета между плитками / method for calculating offset between floors
+:white_check_mark: п╪п╣я┌п╬п╢ п╢п╩я▐ я─п╟я│я┤п╣я┌п╟ п╬я└я└я│п╣я┌п╟ п╪п╣п╤п╢я┐ п©п╩п╦я┌п╨п╟п╪п╦ / method for calculating offset between floors
 
-:black_square_button: возможность имитации паттернов нажатий / ability to simulate click patterns
+:black_square_button: п╡п╬п╥п╪п╬п╤п╫п╬я│я┌я▄ п╦п╪п╦я┌п╟я├п╦п╦ п©п╟я┌я┌п╣я─п╫п╬п╡ п╫п╟п╤п╟я┌п╦п╧ / ability to simulate click patterns
 
-# Документация / Documentation
+# п■п╬п╨я┐п╪п╣п╫я┌п╟я├п╦я▐ / Documentation
 
 ### class SerializeData
 
-Создайте объект класса SerializeData, после чего запустите в отдельном потоке метод setInputFile(string filePath), после чего обработайте полученные данные при помощи processMapData().
-Далее используйте соответствующие методы геттеры и сеттеры для получения параметров карты (вектор angleData и указатели на массивы с bpm, offset, twirl).
+п║п╬п╥п╢п╟п╧я┌п╣ п╬п╠я┼п╣п╨я┌ п╨п╩п╟я│я│п╟ SerializeData, п©п╬я│п╩п╣ я┤п╣пЁп╬ п╥п╟п©я┐я│я┌п╦я┌п╣ п╡ п╬я┌п╢п╣п╩я▄п╫п╬п╪ п©п╬я┌п╬п╨п╣ п╪п╣я┌п╬п╢ setInputFile(string filePath), п©п╬я│п╩п╣ я┤п╣пЁп╬ п╬п╠я─п╟п╠п╬я┌п╟п╧я┌п╣ п©п╬п╩я┐я┤п╣п╫п╫я▀п╣ п╢п╟п╫п╫я▀п╣ п©я─п╦ п©п╬п╪п╬я┴п╦ processMapData().
+п■п╟п╩п╣п╣ п╦я│п©п╬п╩я▄п╥я┐п╧я┌п╣ я│п╬п╬я┌п╡п╣я┌я│я┌п╡я┐я▌я┴п╦п╣ п╪п╣я┌п╬п╢я▀ пЁп╣я┌я┌п╣я─я▀ п╦ я│п╣я┌я┌п╣я─я▀ п╢п╩я▐ п©п╬п╩я┐я┤п╣п╫п╦я▐ п©п╟я─п╟п╪п╣я┌я─п╬п╡ п╨п╟я─я┌я▀ (п╡п╣п╨я┌п╬я─ angleData п╦ я┐п╨п╟п╥п╟я┌п╣п╩п╦ п╫п╟ п╪п╟я│я│п╦п╡я▀ я│ bpm, offset, twirl).
 
 Create an object of the SerializeData class, then run the setInputFile(string filePath) method in a separate thread, and then process the received data using processMapData().
 Next, use the appropriate getter and setter methods to get the map parameters (angleData vector and pointers to arrays with bpm, offset, twirl).
@@ -32,7 +32,7 @@ Next, use the appropriate getter and setter methods to get the map parameters (a
 
 ### function initBot
 
-Позволяет начать автоматическое прохождение уровня. Вызывается initBot(string buttons, vector angleData, float * offset), где buttons строка, состоящая из VK кодов клавиш, angleData и offset - вектор и указатель, полученные геттерами класса SerializeData.
+п÷п╬п╥п╡п╬п╩я▐п╣я┌ п╫п╟я┤п╟я┌я▄ п╟п╡я┌п╬п╪п╟я┌п╦я┤п╣я│п╨п╬п╣ п©я─п╬я┘п╬п╤п╢п╣п╫п╦п╣ я┐я─п╬п╡п╫я▐. п▓я▀п╥я▀п╡п╟п╣я┌я│я▐ initBot(string buttons, vector angleData, float * offset), пЁп╢п╣ buttons я│я┌я─п╬п╨п╟, я│п╬я│я┌п╬я▐я┴п╟я▐ п╦п╥ VK п╨п╬п╢п╬п╡ п╨п╩п╟п╡п╦я┬, angleData п╦ offset - п╡п╣п╨я┌п╬я─ п╦ я┐п╨п╟п╥п╟я┌п╣п╩я▄, п©п╬п╩я┐я┤п╣п╫п╫я▀п╣ пЁп╣я┌я┌п╣я─п╟п╪п╦ п╨п╩п╟я│я│п╟ SerializeData.
 Allows you to start the automatic passage of the level. Called by initBot(string buttons, vector angleData, float * offset), where buttons is a string consisting of VK key codes, angleData and offset are a vector and a pointer received by the getters of the SerializeData class.
 
      string buttons = "69 70 71 72";
@@ -42,7 +42,7 @@ Allows you to start the automatic passage of the level. Called by initBot(string
 
 ### class DialogMenu
 
-Позволяет вызвать стандартное диалоговое меню с выводом в консоль. Для инициализации используется dialogConvert().
+п÷п╬п╥п╡п╬п╩я▐п╣я┌ п╡я▀п╥п╡п╟я┌я▄ я│я┌п╟п╫п╢п╟я─я┌п╫п╬п╣ п╢п╦п╟п╩п╬пЁп╬п╡п╬п╣ п╪п╣п╫я▌ я│ п╡я▀п╡п╬п╢п╬п╪ п╡ п╨п╬п╫я│п╬п╩я▄. п■п╩я▐ п╦п╫п╦я├п╦п╟п╩п╦п╥п╟я├п╦п╦ п╦я│п©п╬п╩я▄п╥я┐п╣я┌я│я▐ dialogConvert().
 Allows you to call a standard dialog menu with output to the console. DialogConvert() is used for initialization.
 
      DialogMenu menu;

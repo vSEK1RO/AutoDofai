@@ -17,6 +17,7 @@ private:
     int * midspinNumber;
     float * bpm;
     float * offset;
+    int * offsetAngle;
     int * twirl;
     int lng;
 
@@ -89,6 +90,7 @@ public:
                 bpm = adofai.getBPM();
                 midspinNumber = adofai.getMidspinNumber();
                 offset = adofai.getOffset();
+                offsetAngle = adofai.getOffsetAngle();
                 twirl = adofai.getTwirl();
                 dialogAutoplay();
             }
@@ -100,27 +102,27 @@ public:
         if(lng==1){
             std::cout<<std::endl<<"Floor";
             consoleColor(0,10);
-            std::cout<<" - angle,\tbpm,\ttwirl,\toffset"<<std::endl<<std::endl;
+            std::cout<<" - angle,\tbpm,\ttwirl,\toffsetAngle,\toffset"<<std::endl<<std::endl;
         }else{
             std::cout<<std::endl<<"ðÌÉÔËÁ";
             consoleColor(0,10);
-            std::cout<<" - ÕÇÏÌ,\tÂÐÍ,\t×ÉÈÒØ,\tÏÆÆÓÅÔ"<<std::endl<<std::endl;
+            std::cout<<" - ÕÇÏÌ,\tÂÐÍ,\t×ÉÈÒØ,\tÕÇÏÌïÆÆÓÅÔÁ,\tÏÆÆÓÅÔ"<<std::endl<<std::endl;
         }
         std::cout.setf(std::ios::fixed);
         std::cout.precision(2);
-        std::cout<<"0"<<" -\t"<<angleData[0]<<",\t"<<bpm[0]<<",\t"<<twirl[0]<<",\t"<<offset[0]<<std::endl;
+        std::cout<<"0"<<" -\t"<<angleData[0]<<",\t"<<bpm[0]<<",\t"<<twirl[0]<<",\t"<<offsetAngle[0]<<",\t"<<offset[0]<<std::endl;
         for(int i=1;i<angleData.size();i++){
-            std::cout<<i+midspinNumber[i-1]<<" -\t"<<angleData[i]<<",\t"<<bpm[i]<<",\t"<<twirl[i]<<",\t"<<offset[i]<<std::endl;
+            std::cout<<i+midspinNumber[i-1]<<" -\t"<<angleData[i]<<",\t"<<bpm[i]<<",\t"<<twirl[i]<<",\t"<<offsetAngle[i]<<",\t"<<offset[i]<<std::endl;
         }
         consoleColor(0,13);
         if(lng==1){
             std::cout<<std::endl<<"Floor";
             consoleColor(0,10);
-            std::cout<<" - angle,\tbpm,\ttwirl,\toffset"<<std::endl;
+            std::cout<<" - angle,\tbpm,\ttwirl,\toffsetAngle,\toffsetAngle"<<std::endl;
         }else{
             std::cout<<std::endl<<"ðÌÉÔËÁ";
             consoleColor(0,10);
-            std::cout<<" - ÕÇÏÌ,\tÂÐÍ,\t×ÉÈÒØ,\tÏÆÆÓÅÔ"<<std::endl;
+            std::cout<<" - ÕÇÏÌ,\tÂÐÍ,\t×ÉÈÒØ,\tÕÇÏÌïÆÆÓÅÔÁ,\tÏÆÆÓÅÔ"<<std::endl;
         }
     }
 
@@ -182,7 +184,8 @@ public:
                     if(buttons==""){
                         buttons="32";
                     }
-                    initBot(buttons, angleData, offset); 
+                    initBot(buttons, angleData, offset, offsetAngle); 
+                    system("cls");
                 }
                 Sleep(150);
             }
@@ -244,7 +247,8 @@ public:
                     if(buttons==""){
                         buttons="32";
                     }
-                    initBot(buttons, angleData, offset); 
+                    initBot(buttons, angleData, offset, offsetAngle); 
+                    system("cls");
                 }
                 Sleep(150);
             }
