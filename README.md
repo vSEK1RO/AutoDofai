@@ -33,6 +33,7 @@ Next, use the appropriate getter and setter methods to get the map parameters (a
 ### function initBot
 
 Позволяет начать автоматическое прохождение уровня. Вызывается initBot(string buttons, vector angleData, float * offset), где buttons строка, состоящая из VK кодов клавиш, angleData и offset - вектор и указатель, полученные геттерами класса SerializeData.
+
 Allows you to start the automatic passage of the level. Called by initBot(string buttons, vector angleData, float * offset), where buttons is a string consisting of VK key codes, angleData and offset are a vector and a pointer received by the getters of the SerializeData class.
 
      string buttons = "69 70 71 72";
@@ -43,6 +44,7 @@ Allows you to start the automatic passage of the level. Called by initBot(string
 ### class DialogMenu
 
 Позволяет вызвать стандартное диалоговое меню с выводом в консоль. Для инициализации используется dialogConvert().
+
 Allows you to call a standard dialog menu with output to the console. DialogConvert() is used for initialization.
 
      DialogMenu menu;
