@@ -1,6 +1,6 @@
 <h1 align="center"> AutoDofai </h1>
 
-Скачать текущую версию / Download: [__v0.4__]()
+Скачать текущую версию / Download: [__v0.5__](https://github.com/vSEK1RO/AutoDofai/releases/download/v0.5/AutoDofai_v0.5.rar)
 
 #### Поддерживается для версии 2.3.0 / Supported for version 2.3.0
 
