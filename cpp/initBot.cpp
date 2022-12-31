@@ -21,17 +21,45 @@ void initBot(std::string buttons, std::vector <int> angleData, float * offset, i
         key.push_back(70);
     }
     int currentKey[angleData.size()];
-    int lenght=0;
-    int counter=0;
+    int counter=1;
+    int currentHand=1; //"1"-rightHand   "-1"-leftHand
     for(int i=1;i<angleData.size();i++){
-        currentKey[i]=key[key.size()/2+counter];
-        if(offsetAngle[i+1]<30){
-            counter++;
-            lenght=1;
+        if(counter>0){
+            currentKey[i]=key[key.size()/2+counter-1];
+            if((key.size()/2+counter-1)<0){
+                currentKey[i]=key[0];
+            }
+            if((key.size()/2+counter-1)>(key.size()-1)){
+                currentKey[i]=key[key.size()-1];
+            }
         }else{
-            lenght=0;
-            counter=-1;
+            currentKey[i]=key[key.size()/2+counter];
+            if((key.size()/2+counter)<0){
+                currentKey[i]=key[0];
+            }
+            if((key.size()/2+counter)>(key.size()-1)){
+                currentKey[i]=key[key.size()-1];
+            }
         }
-
+        if(offsetAngle[i+1]<40){
+            if(counter>0){
+                counter++;
+            }
+            if(counter<0){
+                counter--;
+            }
+        }else{
+            currentHand*=(-1);
+            counter=1;
+            counter*=currentHand;
+        }
     }
+    for(int i=0;i<key.size();i++){
+        std::cout<<key[i]<<" ";
+    }
+    std::cout<<std::endl;
+    for(int i=1;i<angleData.size();i++){
+        std::cout<<currentKey[i]<<" ";
+    }
+    std::cin>>currentKey[0];
 }

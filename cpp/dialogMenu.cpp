@@ -223,6 +223,7 @@ public:
                     }
                 }
                 if(inputDialog==1){
+                    buttons="";
                     std::cout<<std::endl<<"Введите клавиши, для завершения нажмите ";
                     consoleColor(0,13);
                     std::cout<<"Escape"<<std::endl;
