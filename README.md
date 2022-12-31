@@ -1,6 +1,6 @@
-# AutoDofai
+<h1 align="center"> AutoDofai </h1>
 
-## Скачать текущую версию / Download: [__v0.4__]()
+Скачать текущую версию / Download: [__v0.4__]()
 
 #### Поддерживается для версии 2.3.0 / Supported for version 2.3.0
 
@@ -16,7 +16,7 @@
 
 :white_check_mark: возможность имитации паттернов нажатий / ability to simulate click patterns
 
-# Документация / Documentation
+<h1 align="center"> Документация / Documentation </h1>
 
 ### class SerializeData
 
