@@ -2,6 +2,8 @@
 
 ### Скачать текущую версию / Download: [__v0.1__](https://github.com/vSEK1RO/3D_Engine/releases/download/v0.1/src.rar)
 
+#### Поддерживается для версии 2.3.0 / Supported for version 2.3.0
+
 >Данный проект представляет собой бота для адофаи с возможностью имитации паттернов нажатий.
 
 >This project is a bot for adofai with the ability to simulate click patterns.
@@ -12,7 +14,7 @@
 
 :white_check_mark: метод для расчета оффсета между плитками / method for calculating offset between floors
 
-:black_square_button: возможность имитации паттернов нажатий / ability to simulate click patterns
+:white_check_mark: возможность имитации паттернов нажатий / ability to simulate click patterns
 
 # Документация / Documentation
 
