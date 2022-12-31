@@ -118,7 +118,7 @@ public:
         if(lng==1){
             std::cout<<std::endl<<"Floor";
             consoleColor(0,10);
-            std::cout<<" - angle,\tbpm,\ttwirl,\toffsetAngle,\toffsetAngle"<<std::endl;
+            std::cout<<" - angle,\tbpm,\ttwirl,\toffsetAngle,\toffset"<<std::endl;
         }else{
             std::cout<<std::endl<<"Плитка";
             consoleColor(0,10);
@@ -184,7 +184,11 @@ public:
                     if(buttons==""){
                         buttons="32";
                     }
+                    system("cls");
+                    consoleColor(0,12);
+                    std::cout<<"Press escape to finish";
                     initBot(buttons, angleData, offset, offsetAngle); 
+                    consoleColor(0,10);
                     system("cls");
                 }
                 Sleep(150);
@@ -248,7 +252,11 @@ public:
                     if(buttons==""){
                         buttons="32";
                     }
+                    system("cls");
+                    consoleColor(0,12);
+                    std::cout<<"Для завершения нажмите Escape";
                     initBot(buttons, angleData, offset, offsetAngle); 
+                    consoleColor(0,10);
                     system("cls");
                 }
                 Sleep(150);

@@ -1,7 +1,16 @@
 #include <string>
 #include <vector>
+#include <stdlib.h>
+#include <time.h>
+#include <windows.h>
 #include "../src/include/SFML/Graphics.hpp"
-#include <iostream>
+
+int GetRandomNumber(int min, int max)
+{
+  srand(time(NULL));
+  int num = min + rand() % (max - min + 1);
+  return num;
+}
 
 void initBot(std::string buttons, std::vector <int> angleData, float * offset, int * offsetAngle){
     sf::Clock clock;
@@ -16,9 +25,6 @@ void initBot(std::string buttons, std::vector <int> angleData, float * offset, i
     }
     if(key.size()%2!=0 && key.size()>1){
         key.pop_back();
-    }
-    if(key.size()==0){
-        key.push_back(70);
     }
     int currentKey[angleData.size()];
     int counter=1;
@@ -54,12 +60,16 @@ void initBot(std::string buttons, std::vector <int> angleData, float * offset, i
             counter*=currentHand;
         }
     }
-    for(int i=0;i<key.size();i++){
-        std::cout<<key[i]<<" ";
+    while(clock.getElapsedTime().asMilliseconds()<offset[0]){
     }
-    std::cout<<std::endl;
     for(int i=1;i<angleData.size();i++){
-        std::cout<<currentKey[i]<<" ";
+        clock.restart();
+        while(clock.getElapsedTime().asMilliseconds()<(offset[i])){
+        }
+        keybd_event(currentKey[i], 0,0,0);
+        keybd_event(currentKey[i], 0,KEYEVENTF_KEYUP,0);
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
+            break;
+        }
     }
-    std::cin>>currentKey[0];
 }
