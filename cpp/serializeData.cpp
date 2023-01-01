@@ -126,7 +126,7 @@ public:
         mapData.erase(0,mapData.find("offset")+8);
         offset[0]=stoi(mapData.substr(0,mapData.find(",")));
         mapData.erase(0,mapData.find("countdownTicks")+16);
-        offset[0]=(stoi(mapData.substr(0,mapData.find(",")))*180)*1000/(3*bpm[0])+offset[0]+850.0;
+        offset[0]+=(stoi(mapData.substr(0,mapData.find(",")))*180)*1000/(3*bpm[0])+850.0;
         mapData.erase(0,mapData.find("actions")+9);
         mapData=mapData.substr(0,mapData.find("decorations"));
         int currentFloorPos=0;
@@ -173,6 +173,10 @@ public:
                     offset[i]=(1000*mod(-angleData[i-1]+angleData[i],360))/(3*currentBPM);
                 }
             }
+            if(offset[i]==0){
+                offsetAngle[i]=360;
+                offset[i]=(1000*360)/(3*currentBPM);;
+            }
             currentTwirl*=twirl[i];
             if(bpm[i]!=0){
                 if(bpm[i]>=0){
@@ -203,7 +207,7 @@ public:
 
     int * getOffsetAngle(){
         return offsetAngle;
-    };
+    }
 
     int * getTwirl(){
         return twirl;

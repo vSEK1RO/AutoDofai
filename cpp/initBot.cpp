@@ -62,11 +62,14 @@ void initBot(std::string buttons, std::vector <int> angleData, float * offset, i
     }
     while(clock.getElapsedTime().asMilliseconds()<offset[0]){
     }
+    clock.restart();
     for(int i=1;i<angleData.size();i++){
-        clock.restart();
         while(clock.getElapsedTime().asMilliseconds()<(offset[i])){
         }
+        clock.restart();
         keybd_event(currentKey[i], 0,0,0);
+        while(clock.getElapsedTime().asMilliseconds()<(offset[i+1]-10)){
+        }
         keybd_event(currentKey[i], 0,KEYEVENTF_KEYUP,0);
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
             break;

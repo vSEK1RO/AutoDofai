@@ -33,7 +33,7 @@ void update(std::string currentVer){
     inputData.erase(0,inputData.find("<strong>")+8);    
     if(currentVer!=inputData.substr(0,inputData.find("</strong>"))){
         MessageBox(GetActiveWindow(), "Update available", "Notification", MB_OK);
-        ShellExecute(0,"open","https://github.com/vSEK1RO/AutoDofai/releases/download/v0.5/AutoDofai_v0.5.rar",NULL,NULL,SW_SHOWDEFAULT);
+        ShellExecute(0,"open","https://github.com/vSEK1RO/AutoDofai/releases/download/v0.6/AutoDofai_v0.6.rar",NULL,NULL,SW_SHOWDEFAULT);
         exit(1);
     }
 }

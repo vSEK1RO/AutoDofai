@@ -1,8 +1,8 @@
 <h1 align="center"> AutoDofai </h1>
 
-Скачать текущую версию / Download: [__v0.5__](https://github.com/vSEK1RO/AutoDofai/releases/download/v0.5/AutoDofai_v0.5.rar)
+Скачать текущую версию / Download: [__v0.6__](https://github.com/vSEK1RO/AutoDofai/releases/download/v0.6/AutoDofai_v0.6.rar)
 
-#### Поддерживается для версии 2.3.0 / Supported for version 2.3.0
+#### Поддерживается для версии 2.3.1 / Supported for version 2.3.1
 
 >Данный проект представляет собой бота для __адофаи__ с возможностью имитации паттернов нажатий.
 
