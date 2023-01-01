@@ -9,12 +9,13 @@ private:
 
     std::string convertionType;
     std::vector <int> angleData;
-    int midspinNumber[100000];
-    int midspin[100000];
-    float bpm[100000];
-    float offset[100000];
-    int offsetAngle[100000];
-    int twirl[100000];
+    int midspinPosition[60000];
+    int midspinNumber[60000];
+    int midspin[60000];
+    float bpm[60000];
+    float offset[60000];
+    int offsetAngle[60000];
+    int twirl[60000];
     std::string mapData="";
 
     std::string convertAngleData(std::string angle, std::string type);

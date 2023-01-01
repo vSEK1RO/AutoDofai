@@ -2,7 +2,7 @@
 
 <img src="https://i.imgur.com/0Wy0Djx.png"></img>
 
-Скачать текущую версию / Download: [__v0.6__](https://github.com/vSEK1RO/AutoDofai/releases/download/v0.6/AutoDofai_v0.6.rar)
+Скачать текущую версию / Download: [__v0.7__](https://github.com/vSEK1RO/AutoDofai/releases/download/v0.7/AutoDofai_v0.7.rar)
 
 #### Поддерживается для версии 2.3.1 / Supported for version 2.3.1
 
@@ -38,15 +38,15 @@ Next, use the appropriate getter and setter methods to get the map parameters (a
 
 ### function initBot
 
-Позволяет начать автоматическое прохождение уровня. Вызывается initBot(string buttons, vector angleData, float * offset), где buttons строка, состоящая из VK кодов клавиш, angleData и offset - вектор и указатель, полученные геттерами класса SerializeData.
+Позволяет начать автоматическое прохождение уровня. Вызывается initBot(string buttons, vector <int> angleData, float * offset, int * offsetAngle, int floor, float speed), где buttons строка, состоящая из VK кодов клавиш, angleData и offset - вектор и указатель, полученные геттерами класса SerializeData.
 
-Allows you to start the automatic passage of the level. Called by initBot(string buttons, vector angleData, float * offset), where buttons is a string consisting of VK key codes, angleData and offset are a vector and a pointer received by the getters of the SerializeData class.
+Allows you to start the automatic passage of the level. Called by initBot(string buttons, vector <int> angleData, float * offset, int * offsetAngle, int floor, float speed), where buttons is a string consisting of VK key codes, angleData and offset are a vector and a pointer received by the getters of the SerializeData class.
 
 ```c#
      string buttons = "69 70 71 72";
      vector <int> angleData = adofai.getAngleData();
      int * offset = adofai.getOffset();
-     initBot(buttons, angleData, offset); 
+     initBot(buttons, angleData, offset, offsetAngle, floor, speed); 
 ```
 
 ### class DialogMenu

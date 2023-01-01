@@ -12,7 +12,7 @@ int GetRandomNumber(int min, int max)
   return num;
 }
 
-void initBot(std::string buttons, std::vector <int> angleData, float * offset, int * offsetAngle){
+void initBot(std::string buttons, std::vector <int> angleData, float * offset, int * offsetAngle, int floor, float speed){
     sf::Clock clock;
     clock.restart();
     std::vector <int> key;
@@ -60,15 +60,15 @@ void initBot(std::string buttons, std::vector <int> angleData, float * offset, i
             counter*=currentHand;
         }
     }
-    while(clock.getElapsedTime().asMilliseconds()<offset[0]){
-    }
+    //while(clock.getElapsedTime().asMilliseconds()<offset[0]){
+    //}
     clock.restart();
-    for(int i=1;i<angleData.size();i++){
-        while(clock.getElapsedTime().asMilliseconds()<(offset[i])){
+    for(int i=floor+1;i<angleData.size();i++){
+        while(clock.getElapsedTime().asMilliseconds()<(offset[i]/speed)){
         }
         clock.restart();
         keybd_event(currentKey[i], 0,0,0);
-        while(clock.getElapsedTime().asMilliseconds()<(offset[i+1]-10)){
+        while(clock.getElapsedTime().asMilliseconds()<(offset[i+1]/speed-10)){
         }
         keybd_event(currentKey[i], 0,KEYEVENTF_KEYUP,0);
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
