@@ -1,7 +1,6 @@
 #include "../src/include/curl/curl/curl.h"
 #include <string>
 #include <windows.h>
-#include <iostream>
 
 static size_t curlWriter(char *buffer, size_t size, size_t nmemb, std::string *html){
   int result = 0;
@@ -33,7 +32,8 @@ void update(std::string currentVer){
     inputData.erase(0,inputData.find("<strong>")+8);    
     if(currentVer!=inputData.substr(0,inputData.find("</strong>"))){
         MessageBox(GetActiveWindow(), "Update available", "Notification", MB_OK);
-        ShellExecute(0,"open","https://github.com/vSEK1RO/AutoDofai/releases/download/v0.6/AutoDofai_v0.6.rar",NULL,NULL,SW_SHOWDEFAULT);
+        std::string directLink="https://github.com/vSEK1RO/AutoDofai/releases/download/" + inputData.substr(0,inputData.find("</strong>")) + "/AutoDofai_" + inputData.substr(0,inputData.find("</strong>")) + ".rar";
+        ShellExecute(0,"open", directLink.c_str() ,NULL,NULL,SW_SHOWDEFAULT);
         exit(1);
     }
 }
