@@ -18,6 +18,10 @@
 
 :white_check_mark: возможность имитации паттернов нажатий / ability to simulate click patterns
 
+### Видео-демострация работы бота доступна здесь / Video demonstration:
+
+https://user-images.githubusercontent.com/114253920/219884072-48103d95-b0de-4ea6-8d5d-bea32cefec0b.mp4
+
 <h1 align="center"> Документация / Documentation </h1>
 
 ### class SerializeData
